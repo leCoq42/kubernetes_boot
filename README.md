@@ -63,7 +63,13 @@ To run the manifests in this repository, you will need `minikube` and `kubectl` 
     minikube tunnel -c --bind-address="127.0.0.1"
     ```
     
-6.  **Navigate to http://synchat.internal in your browser**
+6.  **Add the entries to your /etc/hosts file to resolve the necessary domains to the Gateway load balancer:**
+    ```bash
+    echo "127.0.0.1 synchat.internal" | sudo tee -a /etc/hosts
+    echo "127.0.0.1 synchatapi.internal" | sudo tee -a /etc/hosts
+    ```
+    
+7.  **Navigate to http://synchat.internal in your browser**
 
 ---
 
